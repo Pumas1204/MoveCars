@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/MoveCars/static/css/main.7f00cb7d.css",
-    "main.js": "/MoveCars/static/js/main.916c082d.js",
+    "main.css": "/MoveCars/static/css/main.17f92ec1.css",
+    "main.js": "/MoveCars/static/js/main.4e4c289e.js",
     "index.html": "/MoveCars/index.html",
-    "main.7f00cb7d.css.map": "/MoveCars/static/css/main.7f00cb7d.css.map",
-    "main.916c082d.js.map": "/MoveCars/static/js/main.916c082d.js.map"
+    "main.17f92ec1.css.map": "/MoveCars/static/css/main.17f92ec1.css.map",
+    "main.4e4c289e.js.map": "/MoveCars/static/js/main.4e4c289e.js.map"
   },
   "entrypoints": [
-    "static/css/main.7f00cb7d.css",
-    "static/js/main.916c082d.js"
+    "static/css/main.17f92ec1.css",
+    "static/js/main.4e4c289e.js"
   ]
 }
