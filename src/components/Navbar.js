@@ -8,11 +8,12 @@ export default function Navbar() {
         <IconButton size='large' edge='start' color='inherit' aria-label= 'logo'>
 
         </IconButton>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          MoveCars
-        </Typography>
+        <Typography variant="h5" component="div" sx={{ flexGrow: 1, fontFamily: 'Merriweather, serif' }}>
+    MoveCars.com
+</Typography>
 
-        <Stack direction='row' spacing={2}>
+
+        <Stack direction='row' spacing={2} sx={{ fontFamily: 'Merriweather, serif' }}>
           <Button color="inherit">Home</Button>
           <Button color="inherit">About</Button>
           <Button color="inherit">Careers</Button>

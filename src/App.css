@@ -33,7 +33,7 @@
     top: 40%; /* Center it vertically */
     left: 50%; /* Center it horizontally */
     transform: translate(-50%, -50%); /* Offset for perfect centering */
-    opacity: 0.5; /* Set the desired opacity */
+    opacity: 0.8; /* Set the desired opacity */
     z-index: 0; /* Ensure the image is behind the text */
     width: 400px; /* Adjust the size as needed */
     height: auto; /* Maintain aspect ratio */

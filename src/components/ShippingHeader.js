@@ -1,4 +1,4 @@
-// src/components/ShippingHeader.js
+
 import React, { useState, useEffect } from 'react';
 
 const cityList = [
@@ -41,7 +41,7 @@ function ShippingHeader() {
       Where to? <span className={fadeClass}>{currentCity}</span>
     </h2>
     <img
-        src="https://static.vecteezy.com/system/resources/previews/016/134/506/original/cartoon-truck-car-icon-in-comic-style-fast-delivery-service-shipping-sign-illustration-pictogram-car-van-business-splash-effect-concept-vector.jpg"
+        src="https://p.turbosquid.com/ts-thumb/Sk/yInSTM/auISb3Kd/tow_truck4/jpg/1600784881/1920x1080/turn_fit_q99/bf494a1fb624d6eb2e3a1dd27683b0701a8b0353/tow_truck4-1.jpg"
         alt="Delivery Truck"
         className="delivery-image"
       />

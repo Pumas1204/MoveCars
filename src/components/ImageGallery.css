@@ -17,6 +17,10 @@
   object-fit: cover;
   border-radius: 15%;
 }
+.img-box:hover img {
+  transform: scale(1.1); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
 
 .img-box span {
   position: absolute;
@@ -26,6 +30,6 @@
   color: white;
   font-size: 22px;
   font-weight: bold;
-  text-shadow: 1px 1px 2px black; /* Makes text more readable */
-  pointer-events: none; /* Prevents clicks on text, allowing clicks on image */
+  text-shadow: 1px 1px 2px black; 
+  pointer-events: none; 
 }

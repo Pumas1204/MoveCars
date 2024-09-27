@@ -4,6 +4,7 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import dayjs from 'dayjs';
+import ShippingEstimatesDisplay from './ShippingEstimatesDisplay'; 
 
 export default function DestinationBox() {
   const [pickupLocation, setPickupLocation] = useState("");
@@ -18,12 +19,8 @@ export default function DestinationBox() {
     model: ''
   });
 
-  
-
   const pickupRef = useRef(null);
   const destinationRef = useRef(null);
-
-  const apiKey = 'AIzaSyBtMp-wqCBAjy3x7QXUdBGj86yIfgDGXCA';
 
   useEffect(() => {
     if (window.google) {
@@ -42,34 +39,37 @@ export default function DestinationBox() {
     }
   }, []);
 
-  const calculateDistance = async () => {
+  const calculateDistance = () => {
     if (!pickupLocation || !destinationLocation) {
       setError("Please enter both pickup and destination locations.");
       return;
     }
 
     setError(null);
+    
+    const service = new window.google.maps.DistanceMatrixService();
+    service.getDistanceMatrix(
+      {
+        origins: [pickupLocation],
+        destinations: [destinationLocation],
+        travelMode: window.google.maps.TravelMode.DRIVING,
+        unitSystem: window.google.maps.UnitSystem.IMPERIAL,
+      }, callback
+    );
 
-    try {
-      const response = await fetch(`https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=${encodeURIComponent(pickupLocation)}&destinations=${encodeURIComponent(destinationLocation)}&key=${apiKey}`);
-      const data = await response.json();
-
-      if (data.rows[0].elements[0].status === "OK") {
-        const distanceInMiles = data.rows[0].elements[0].distance.value * 0.000621371; // Convert meters to miles
-        setDistance(distanceInMiles.toFixed(2)); // Set distance in miles, rounded to two decimal places
+    function callback(response, status) {
+      if (status === 'OK') {
+        const distanceInMiles = response.rows[0].elements[0].distance.value * 0.000621371; 
+        setDistance(distanceInMiles.toFixed(2)); 
       } else {
         setError("Unable to calculate distance. Please check the addresses.");
       }
-    } catch (err) {
-      setError("Error fetching distance. Please try again later.");
-      console.error(err);
     }
   };
 
-
   return (
-    <Box display="flex" justifyContent="center" alignItems="center" height="50vh" p={2} mt={12} >
-      <Grid container spacing={4} justifyContent="center" alignItems="center" maxWidth="lg">
+    <Box display="flex" justifyContent="center" alignItems="center" height="50vh" p={2} mt={12 }  padding='140px' >
+ <Grid container spacing={4} justifyContent="center" alignItems="center" maxWidth="lg">
         <Grid item xs={12} md={6}>
           <Typography variant="h5" gutterBottom>
             Shipping Details
@@ -199,6 +199,7 @@ export default function DestinationBox() {
             <Typography variant="h6">
               Distance: {distance} miles
             </Typography>
+            <ShippingEstimatesDisplay distance={distance} carQuantity={carQuantity} />
           </Grid>
         )}
       </Grid>

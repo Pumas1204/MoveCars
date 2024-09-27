@@ -6,6 +6,7 @@ import ImageGallery from './components/ImageGallery'; // Correct import
 import ShippingHeader from './components/ShippingHeader';
 
 
+
 function App() {
   return (
     <>

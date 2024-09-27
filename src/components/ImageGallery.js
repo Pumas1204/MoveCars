@@ -1,6 +1,8 @@
-// src/components/ImageGallery.js
+
 import React from 'react';
 import './ImageGallery.css';
+import { Box } from '@mui/material';
+
 
 const images = [
     {
@@ -20,18 +22,37 @@ const images = [
         caption: 'New York'
     }
 ];
-
 const ImageGallery = () => {
     return (
-        <div className="image-gallery">
-            {images.map((image, index) => (
-                <a key={index} className="img-box" href={image.src}>
-                    <img src={image.src} alt={image.caption} style={{ width: '250px', height: '150px', margin: '5px' }} />
-                    <span>{image.caption}</span>
-                </a>
-            ))}
+      <Box
+        sx={{
+          border: '1px solid #ccc',
+          borderRadius: '8px',
+          padding: '20px',
+          marginTop: '40px', 
+          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+          backgroundColor: '#f9f9f9',
+        }}
+      >
+        <div className="image-gallery" style={{ display: 'flex', flexWrap: 'wrap' }}>
+          {images.map((image, index) => (
+            <a
+              key={index}
+              className="img-box"
+              href={image.src}
+              style={{ textDecoration: 'none', textAlign: 'center', margin: '10px' }}
+            >
+              <img
+                src={image.src}
+                alt={image.caption}
+                style={{ width: '250px', height: '150px', margin: '5px', borderRadius: '4px' }}
+              />
+              <span>{image.caption}</span>
+            </a>
+          ))}
         </div>
+      </Box>
     );
-};
-
-export default ImageGallery;
+  };
+  
+  export default ImageGallery;
