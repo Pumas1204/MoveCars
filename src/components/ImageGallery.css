@@ -1,0 +1,31 @@
+.image-gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.img-box {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+
+.img-box img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 15%;
+}
+
+.img-box span {
+  position: absolute;
+  top: 70%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px black; /* Makes text more readable */
+  pointer-events: none; /* Prevents clicks on text, allowing clicks on image */
+}

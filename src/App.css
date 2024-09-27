@@ -1,0 +1,42 @@
+.fade-in {
+    opacity: 1;
+    transition: opacity 0.5s ease-in;
+  }
+  
+  .fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+  }
+  
+  .shipping-header {
+    text-align: center;
+    margin-bottom: 0px;
+
+  }
+  
+  .shipping-header h1 {
+    font-size: 52px; /* Increased size for emphasis */
+    font-weight: bold;
+  }
+  
+  .shipping-header h2 {
+    font-size: 44px; /* Slightly smaller size for the second line */
+    font-weight: normal;
+  }
+  
+  .shipping-header span {
+    font-style: italic;
+    color: #333;
+  }
+  .delivery-image {
+    position: absolute; /* Position it behind the text */
+    top: 40%; /* Center it vertically */
+    left: 50%; /* Center it horizontally */
+    transform: translate(-50%, -50%); /* Offset for perfect centering */
+    opacity: 0.5; /* Set the desired opacity */
+    z-index: 0; /* Ensure the image is behind the text */
+    width: 400px; /* Adjust the size as needed */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
+  
